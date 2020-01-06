@@ -1,0 +1,35 @@
+Lecture 08　ELK工具流實例
+--------------------------------------------------------------------------------
+8.1　ELK經典流程
+
+1.靜態資料(csv檔)
+  (1)下載csv檔資料，logstash直接匯入資料庫
+  (2)檢查elasticsearch匯入，kibana建立index-pattern
+  (3)探索式資料觀察、dashboard/timelion
+
+2.動態資料庫(MySQL)
+  (1)連接MySQL，logstash連接設定(input,filter,output)
+  (2)檢查elasticsearch匯入，kibana建立index-pattern
+  (3)探索式資料觀察、dashboard/timelion
+
+--------------------------------------------------------------------------------
+8.2　kafka工具流
+
+1.jupyter(PyCharm)安裝pandasticsearch
+
+2.執行兩隻ipynb檔:producer模擬資料寫入、consumer接收模擬資料
+
+3.檢查elasticsearch匯入，kibana建立index-pattern
+
+4.探索式資料觀察、dashboard/timelion
+
+--------------------------------------------------------------------------------
+
+8.3　時間序列分析
+
+.es(index=索引名稱,timefield=指定時間欄位,metric=函數:資料欄位)
+.if(比較方式,比較值,true運算,false運算)
+
+  > .es(index=metricbeat-*,timefield="timestamp",metric="avg:system.cpu.user.pct")
+  > .if(lt,60,100,0)
+  
