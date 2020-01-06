@@ -48,4 +48,3 @@ Lecture 06　資料取得:elasticsearch(2)
   #觀察佔用port埠位(0:::9200,0:::9300)
   > netstat -an | more
   > curl -XGET "http://localhost:9200"
-  
